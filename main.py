@@ -17,4 +17,9 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.uix.button import Button
 from kivy.uix.label import Label
 
+class TestApp(App):
+    def build(self):
+        return Button(text='Record your catch')
+
+
 TestApp().run()
