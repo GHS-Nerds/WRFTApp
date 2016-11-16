@@ -1,4 +1,4 @@
-# WRFTApp
+# WRFTApp 0.0.1
 
 This project is an app for the Wester Ross Fisheries Trust. It will:
 
@@ -8,4 +8,4 @@ This project is an app for the Wester Ross Fisheries Trust. It will:
 
 * And relay this data to the Wester Ross Fisheries Trust Database
 
-It is currently LGPL Liscensed
+It is currently LGPL Liscensed, and in Alpha.
