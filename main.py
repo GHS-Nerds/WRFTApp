@@ -20,6 +20,25 @@ from kivy.uix.label import Label
 class TestApp(App):
     def build(self):
         return Button(text='Record your catch')
+    
+    def recordCatch(catchList):
+        """
+        Go to screen with Collection points for Weight, photo, name of fish etc
+        input the output of them to a Dictionary
+        """
+        
+    def out2Database(catchList, serverNo):
+        '''
+        Change data from databases to outputtable form
+        send data to database
+        '''
+    
+    def on_touch_down(self, touch):
+        if self.collide_point(*touch.pos):  #touch.pos will e wherever the buttom is -RM
+           recordCatch()
+            pass
+    
+
 
 
 TestApp().run()
