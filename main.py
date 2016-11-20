@@ -38,7 +38,13 @@ class TestApp(App):
            recordCatch()
             pass
     
+class TestApp(App):
+    def build(self):
+        return Button(text='Weather Forecast')
 
+class TestApp(App):
+    def build(self):
+        return Button(text='Local Fishing Locations')
 
 
 TestApp().run()
