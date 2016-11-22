@@ -16,27 +16,61 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.button import Button
 from kivy.uix.label import Label
+from kivy.uix.screenmanager import ScreenManager, Screen, slideTransition
 
-class TestApp(App):
+sm = ScreenManager(transition=SlideTransition())
+kivySm = kivy.uix.screenmanager
+
+catchRecord_screen = Screen(name='catchRecord')
+sm.add_widget(catchRecord_screen)
+
+class home_screen(Screen):
+    '''
+    This is where the setting up for buttons for the home screen goes
+    '''
+    pass
+
+class catchRecord_screen(Screen):
+    '''
+    This is where the setting up for buttons for the home screen goes
+    '''
+    pass
+
+class kivySm.TransitionBase()
+    duration = .1
+    isActive = True
+
+class kivySm.SlideTransition()
+    def right():
+        direction = right
+    def left():
+        direction = left
+
+sm.add_widget(home_screen(name='home'))
+sm.add_widget(catchRecord_screen(name='home'))
+
+class WRFT(App):
     def build(self):
         return Button(text='Record your catch')
     
-    def recordCatch(catchList):
+    def recordCatch_process(catchList):
         """
-        Go to screen with Collection points for Weight, photo, name of fish etc
-        input the output of them to a Dictionary
+        Clear screen
+        Go to screen with Collection points for Weight, photo, name of fish etc [Populate screen]
+        Input the output of them to a Dictionary
         """
         
     def out2Database(catchList, serverNo):
         '''
         Change data from databases to outputtable form
-        send data to database
+        Send data to database
         '''
     
-    def on_touch_down(self, touch):
+    def weatherForcast_Detect(self, touch):
         if self.collide_point(*touch.pos):  #touch.pos will e wherever the buttom is -RM
            recordCatch()
             pass
+    
     
 class TestApp(App):
     def build(self):
@@ -46,5 +80,7 @@ class TestApp(App):
     def build(self):
         return Button(text='Local Fishing Locations')
 
+sm.add_widget(home_screen(name='home'))
+sm.add_widget(catchRecord_screen(name='home'))
+WRFT().run()
 
-TestApp().run()
