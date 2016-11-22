@@ -72,11 +72,11 @@ class WRFT(App):
             pass
     
     
-class TestApp(App):
+class WRFT(App):
     def build(self):
         return Button(text='Weather Forecast')
 
-class TestApp(App):
+class WRFT(App):
     def build(self):
         return Button(text='Local Fishing Locations')
 
