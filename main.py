@@ -16,7 +16,7 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.button import Button
 from kivy.uix.label import Label
-from kivy.uix.screenmanager import ScreenManager, Screen, slideTransition
+from kivy.uix.screenmanager import ScreenManager, Screen, SlideTransition
 
 sm = ScreenManager(transition=SlideTransition())
 kivySm = kivy.uix.screenmanager
@@ -36,11 +36,11 @@ class catchRecord_screen(Screen):
     '''
     pass
 
-class kivySm.TransitionBase()
+class kivySm_TransitionBase():
     duration = .1
     isActive = True
 
-class kivySm.SlideTransition()
+class kivySm_SlideTransition():
     def right():
         direction = right
     def left():
