@@ -36,12 +36,16 @@ class WRFT(App):
         Send data to database
         '''
     
-    def weatherForcast_Detect(self, touch):
-        -pass
+    def weatherForcast_Detect(self, Button):
+        pass
     
     def fishingLocations(self, Button):
-        return 
+        pass
     
+    def catchRecord(self, Button):
+        pass
+    
+   
 
 if __name__ == '__main__':
     WRFT().run()
