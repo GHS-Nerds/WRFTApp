@@ -69,7 +69,7 @@ class WRFT(App):
     def weatherForcast_Detect(self, touch):
         if self.collide_point(*touch.pos):  #touch.pos will e wherever the buttom is -RM
            recordCatch()
-            pass
+           pass
     
     
 class WRFT(App):
