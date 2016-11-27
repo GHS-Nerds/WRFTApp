@@ -16,11 +16,9 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.button import Button
 from kivy.uix.label import Label
-from kivy.uix.screenmanager import ScreenManager, Screen, SlideTransition
+from kivy.uix.screenmanager import ScreenManager, Screen
 
-sm = ScreenManager(transition=SlideTransition())
-kivySm = kivy.uix.screenmanager
-
+sm = ScreenManager()
 catchRecord_screen = Screen(name='catchRecord')
 sm.add_widget(catchRecord_screen)
 
@@ -36,15 +34,6 @@ class catchRecord_screen(Screen):
     '''
     pass
 
-class kivySm_TransitionBase():
-    duration = .1
-    isActive = True
-
-class kivySm_SlideTransition():
-    def right():
-        direction = right
-    def left():
-        direction = left
 
 sm.add_widget(home_screen(name='home'))
 sm.add_widget(catchRecord_screen(name='home'))
@@ -53,34 +42,39 @@ class WRFT(App):
     def build(self):
         return Button(text='Record your catch')
     
-    def recordCatch_process(catchList):
+    def recordCatch_process(self, catchList):
         """
         Clear screen
         Go to screen with Collection points for Weight, photo, name of fish etc [Populate screen]
         Input the output of them to a Dictionary
         """
         
-    def out2Database(catchList, serverNo):
+    def out2Database(self, catchList, serverNo):
         '''
         Change data from databases to outputtable form
         Send data to database
         '''
     
     def weatherForcast_Detect(self, touch):
-        if self.collide_point(*touch.pos):  #touch.pos will e wherever the buttom is -RM
-           recordCatch()
-           pass
+        -pass
     
     
-class WRFT(App):
+class WeatherForecast(App):
     def build(self):
         return Button(text='Weather Forecast')
 
-class WRFT(App):
+class FishingLocations(App):
     def build(self):
         return Button(text='Local Fishing Locations')
 
 sm.add_widget(home_screen(name='home'))
 sm.add_widget(catchRecord_screen(name='home'))
-WRFT().run()
+
+if __name__ == '__main__':
+    WRFT().run()
+
+
+
+
+
 
