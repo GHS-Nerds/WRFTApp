@@ -1,18 +1,5 @@
-class WRFT(App):
-    def build(self):
-        return Button(text='Weather Forecast')
-
-class WRFT(App):
-    def build(self):
-        return Button(text='Local Fishing Locations')
-
-class WRFT(App):
-    def build(self):
-        return Button(text='Record your catch')
-
-class WRFT(App):
-    def build(self):
-        return Button(text='Menu')
-    
-sm.add_widget(home_screen(name='home'))
-sm.add_widget(catchRecord_screen(name='home'))
+PageLayout:
+    Button:
+        text: 'menu'
+    Button:
+        text: 'fishing info'
