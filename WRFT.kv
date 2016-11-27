@@ -1,5 +1,7 @@
-PageLayout:
-    Button:
-        text: 'menu'
-    Button:
-        text: 'fishing info'
+layout = BoxLayout(orientation='vertical')
+btn1 = Button(text='Weather Forcast')
+btn2 = Button(text='Record your catch')
+btn3 = Button(text='Fishing locatoins')
+layout.add_widget(btn1)
+layout.add_widget(btn2)
+layout.add_widget(btn3)
