@@ -23,6 +23,12 @@ class WRFT(App):
     def build(self):
         return Button(text='Record your catch')
     
+    def on_touch_down(self, touch):
+    if self.collide_point(*touch.pos):
+        # The touch has occurred inside the widgets area. Do stuff!
+        fish=raw_input('enter a fish species')
+        pass
+    
     def recordCatch_process(self, catchList):
         """
         Clear screen
