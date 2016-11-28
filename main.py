@@ -25,8 +25,13 @@ class WRFT(App):
     
     def on_touch_down(self, touch):
     if self.collide_point(*touch.pos):
-        # The touch has occurred inside the widgets area. Do stuff!
-        fish=raw_input('enter a fish species')
+        class MyFirstWidget(BoxLayout):
+
+    txt_inpt = ObjectProperty(None)
+
+    def check_status(self, btn):
+        print('button state is: {state}'.format(state=btn.state))
+        print('text input text is: {txt}'.format(txt=self.txt_inpt))
         pass
     
     def recordCatch_process(self, catchList):
