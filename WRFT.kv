@@ -1,10 +1,16 @@
-layout = BoxLayout(orientation='vertical')
-weatherForcast_Detect = Button(text='Weather Forcast')
-catchRecord = Button(text='Record your catch')
-fishingLocations = Button(text='Fishing locatoins')
-layout.add_widget(weatherForcast_Detect)
-layout.add_widget(catchRecord)
-layout.add_widget(fishingLocations)
+#:kivy 1.8.0
+<weatherForcast_Detect>:
+	BoxLayout:
+		orientation: 'vertical'
+		Button:
+			text: 'Weather Forcast')
+
+<fishingLocations>:
+	BoxLayout:
+		orientation: 'vertical'
+		Button:
+			text: 'Fishing locations')
+
 <catchRecord>:
     txt_inpt: txt_inpt
     Button:
@@ -12,4 +18,4 @@ layout.add_widget(fishingLocations)
     TextInput:
         id: txt_inpt
         text: f_but.state
-        on_text: root.check_status(f_but)
+on_text: root.check_status(f_but)
