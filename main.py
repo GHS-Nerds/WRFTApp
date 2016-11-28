@@ -25,7 +25,7 @@ class WRFT(App):
     
     def on_touch_down(self, touch):
     if self.collide_point(*touch.pos):
-        class MyFirstWidget(BoxLayout):
+        class Widgetry(BoxLayout):
 
     txt_inpt = ObjectProperty(None)
 
