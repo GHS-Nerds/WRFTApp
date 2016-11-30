@@ -1,21 +1,26 @@
 #:kivy 1.8.0
-<weatherForcast_Detect>:
+<rootWidget>:
+	fishName: txt_input
+
 	BoxLayout:
+		id: weatherForecast
 		orientation: 'vertical'
 		Button:
-			text: 'Weather Forcast')
+			text: 'Weather Forecast'
 
-<fishingLocations>:
 	BoxLayout:
+		id: fishingLocations
 		orientation: 'vertical'
 		Button:
-			text: 'Fishing locations')
+			text: 'Fishing Locations'
 
-<catchRecord>:
-    txt_inpt: txt_inpt
-    Button:
-        id: f_but
-    TextInput:
-        id: txt_inpt
-        text: f_but.state
-on_text: root.check_status(f_but)
+	
+	BoxLayout:
+		orientation: 'vertical'
+		Label:
+			text: 'Please enter the name of the fish'
+			font_size: 10
+
+    	TextInput:
+        	id: txt_input
+
