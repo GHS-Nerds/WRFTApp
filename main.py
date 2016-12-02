@@ -8,7 +8,20 @@ from kivy.uix.anchorlayout import AnchorLayout
 from kivy.uix.boxlayout import BoxLayout
 from kivy.properties import ObjectProperty
 from kivy.uix.textinput import TextInput
+from kivy.uix.screenmanager import ScreenManager, Screen, FadeTransition
 
+class homeScreen(Screen):
+	pass
+
+class settingsScreen(Screen):
+	pass
+
+class recordCatchScreen(Screen):
+	pass
+
+class screenManagement(screenManagement):
+	pass
+	
 class rootWidget(BoxLayout):
     fishName = ObjectProperty()   
     pass 
