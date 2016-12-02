@@ -1,18 +1,28 @@
 #:kivy 1.8.0
-<rootWidget>:
-	fishName: txt_input
+#:import FadeTransition kivy.uix.screenmanager.FadeTransition
 
-	BoxLayout:
+screenManagement:
+	fishName: txt_input
+	transition: FadeTransition()
+	homeScreen:
+		BoxLayout:
 		id: weatherForecast
 		orientation: 'horizontal'
 		Button:
 			text: 'Weather Forecast'
 
-	BoxLayout:
+		BoxLayout:
 		id: fishingLocations
 		orientation: 'horizontal'
 		Button:
 			text: 'Fishing Locations'
+			
+	settingsScreen:
+	recordCatchScreen:
+	
+#:kivy 1.8.0
+<rootWidget>:
+	fishName: txt_input
 
 	
 	BoxLayout:
@@ -23,4 +33,3 @@
 
     	TextInput:
         	id: txt_input
-
