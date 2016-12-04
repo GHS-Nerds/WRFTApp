@@ -1,3 +1,6 @@
+import stmplib
+from email.mime.text import MIMEText 
+#https://docs.python.org/3/library/email-examples.html
 import kivy
 from kivy.uix.button import Button
 kivy.require('1.8.0')
