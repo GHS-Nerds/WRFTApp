@@ -12,7 +12,7 @@
 
 ##Specifications:
 
-  * We are using Kivy (kivy.org) for design tasks.
+  * We are using [Kivy]https://kivy.org/ for design tasks.
   
   * The data the anglers enter will be emailed to the server.
    *(Security could be improved by the use of GPG end-to-end encryption in the future)*
