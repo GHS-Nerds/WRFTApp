@@ -12,7 +12,11 @@ from email.mime.image import MIMEImage
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText 
 ''' this is from https://docs.python.org/3/library/email-examples.html,
-it imports stuff we need to send the test and image contents of a folder by email.J'''
+it imports stuff we need to send the test and image contents of a folder by email.
+The code I added below, hopefully, if the button is tapped will email something, 
+but we need to set variables for a WRFT server email, and a variable for the user and the folder on their system.
+It also needs some sort of script while installing to make the folder, 
+and for this script to place the fish types, photos etc. in the folder. - J'''
 import kivy
 from kivy.uix.button import Button
 kivy.require('1.8.0')
