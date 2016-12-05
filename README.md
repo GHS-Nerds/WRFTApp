@@ -12,9 +12,10 @@
 
 ##Specifications:
 
-  * We are using Kivy (kivy.org) for design useage.
+  * We are using Kivy (kivy.org) for design tasks.
   
   * The data the anglers enter will be emailed to the server.
-  
+   *(Security could be improved by the use of GPG end-to-end encryption in the future)*
+    
 ----------
 It is currently LGPL Liscensed, and in Alpha.
