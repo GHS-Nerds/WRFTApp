@@ -16,7 +16,9 @@ it imports stuff we need to send the test and image contents of a folder by emai
 The code I added below, hopefully, if the button is tapped will email something, 
 but we need to set variables for a WRFT server email, and a variable for the user and the folder on their system.
 It also needs some sort of script while installing to make the folder, 
-and for this script to place the fish types, photos etc. in the folder. - J'''
+and for this script to place the fish types, photos etc. in the folder. 
+I mentioned GPG in readme.md - this will improve security once it's implemented.
+Useful info on that particular subject may be found at http://pythonhosted.org/gnupg/ and https://pypi.python.org/pypi/gnupg - J'''
 import kivy
 from kivy.uix.button import Button
 kivy.require('1.8.0')
@@ -44,28 +46,28 @@ class recordCatchScreen(Screen):
 Unless the -o option is given, the email is sent by forwarding to your local
 SMTP server, which then does the normal delivery process.  Your local machine
 must be running an SMTP server.""")
-			parser.add_argument('-d', '--directory',
-                        help="""Mail the contents of the specified directory,
-                        otherwise use the current directory.  Only the regular
-                        files in the directory are sent, and we don't recurse to
-                        subdirectories.""")
+			#parser.add_argument('-d', '--directory',
+                        #help="""Mail the contents of the specified directory,
+                        #otherwise use the current directory.  Only the regular
+                        #files in the directory are sent, and we don't recurse to
+                        #subdirectories.""")
 			parser.add_argument('-o', '--output',metavar='FILE',
                         help="""Print the composed message to FILE instead of
                         sending the message to the SMTP server.""")
 			parser.add_argument('-s', '--sender', required=True,
                         help='The value of the From: header (required)')
-			parser.add_argument('-r', '--recipient', required=True,
-                        action='append', metavar='RECIPIENT',
-                        default=[], dest='recipients',
-                        help='A To: header value (at least one required)')
+			#parser.add_argument('-r', '--recipient', required=True,
+                        #action='append', metavar='RECIPIENT',
+                        #default=[], dest='recipients',
+                        #help='A To: header value (at least one required)')
 			args = parser.parse_args()
-			directory = args.directory
+			directory = /etc/WRFT
 			if not directory:
 				directory = '.'
 				# Create the enclosing (outer) message
 				outer = MIMEMultipart()
 				outer['Subject'] = 'Contents of directory %s' % os.path.abspath(directory)
-				outer['To'] = COMMASPACE.join(args.recipients)
+				outer['To'] = COMMASPACE.join(GHSNerds@gmail.com)
 				outer['From'] = args.sender
 				outer.preamble = 'You will not see this in a MIME-aware mail reader.\n'
 				
@@ -112,13 +114,13 @@ class screenManagement(screenManagement):
 	pass
 	
 class rootWidget(BoxLayout):
-    fishName = ObjectProperty()   
-    pass 
+    	fishName = ObjectProperty()   
+    	pass 
 
 
 class WRFTApp(App):
-    def build(self):
+    	def build(self):
         return rootWidget()       
 
 if __name__=="__main__":
-    WRFTApp().run()
+	WRFTApp().run()
