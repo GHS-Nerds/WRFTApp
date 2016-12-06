@@ -61,13 +61,13 @@ must be running an SMTP server.""")
                         #default=[], dest='recipients',
                         #help='A To: header value (at least one required)')
 			args = parser.parse_args()
-			directory = /etc/WRFT
+			directory = '/etc/WRFT'
 			if not directory:
 				directory = '.'
 				# Create the enclosing (outer) message
 				outer = MIMEMultipart()
 				outer['Subject'] = 'Contents of directory %s' % os.path.abspath(directory)
-				outer['To'] = COMMASPACE.join(GHSNerds@gmail.com)
+				outer['To'] = COMMASPACE.join('GHSNerds@gmail.com')
 				outer['From'] = args.sender
 				outer.preamble = 'You will not see this in a MIME-aware mail reader.\n'
 				
@@ -107,7 +107,7 @@ must be running an SMTP server.""")
 														fp.write(composed)
 														else:
 															with smtplib.SMTP('localhost') as s
-															s.sendmail(args.sender, args.recipients, composed)
+															s.sendmail(args.sender, 'GHSNerds@gmail.com', composed)
 																   pass
 
 class screenManagement(screenManagement):
