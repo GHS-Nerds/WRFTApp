@@ -33,6 +33,24 @@ from kivy.uix.screenmanager import ScreenManager, Screen, FadeTransition
 
 COMMASPACE=', '
 
+Builder.load_string("""
+<homeScreen>:
+    BoxLayout:
+        Button:
+            text: 'Goto settings'
+            on_press: root.manager.current = 'settings'
+        Button:
+            text: 'Quit'
+
+<settingsScreen>:
+    BoxLayout:
+        Button:
+            text: 'My settings button'
+        Button:
+            text: 'Back to menu'
+            on_press: root.manager.current = 'menu'
+""")#not done yet - needs looking at
+
 class homeScreen(Screen):
 	pass
 
@@ -118,9 +136,15 @@ class rootWidget(BoxLayout):
     	pass 
 
 
+sm=ScreenManager()
+sm.add_widget(Screen(name='homeScreen'))
+sm.add_widget(Screen(name='settingsScreen'))
+sm.add_widget(Screen(name='recordCatchScreen'))
+
 class WRFTApp(App):
     	def build(self):
-        return rootWidget()       
+        return rootWidget()
+	return sm
 
 if __name__=="__main__":
 	WRFTApp().run()
