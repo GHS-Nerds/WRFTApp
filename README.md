@@ -9,6 +9,8 @@
   * Allow anglers to fill in data about their catches,
 
   * And relay this data to the Wester Ross Fisheries Trust Database
+  
+  * All inside the Wester Ross Area
 
 ##Specifications:
 
