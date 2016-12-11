@@ -28,7 +28,10 @@ from kivy.properties import ObjectProperty
 from kivy.uix.textinput import TextInput
 from kivy.uix.screenmanager import ScreenManager, Screen, FadeTransition
 
-
+path = '/etc/WRFT'
+if not os.path.exists(path)
+	os.mkdir(path)
+	#https://stackoverflow.com/questions/273192/how-to-check-if-a-directory-exists-and-create-it-if-necessary
 
 Builder.load_string("""
 <homeScreen>:
