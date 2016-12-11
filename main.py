@@ -2,9 +2,6 @@ import os
 import sys
 import stmplib
 import mimetypes
-
-from argparse import ArgumentParser
-
 from email import encoders
 from email.message import Message
 from email.mime.base import MIMEBase
