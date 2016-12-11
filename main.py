@@ -28,7 +28,7 @@ from kivy.properties import ObjectProperty
 from kivy.uix.textinput import TextInput
 from kivy.uix.screenmanager import ScreenManager, Screen, FadeTransition
 
-COMMASPACE=', '
+
 
 Builder.load_string("""
 <homeScreen>:
@@ -52,6 +52,7 @@ class homeScreen(Screen):
 	pass
 
 class settingsScreen(Screen):
+	userEmail = TextInput(focus=True)
 	pass
 
 class recordCatchScreen(Screen):
@@ -62,7 +63,7 @@ class recordCatchScreen(Screen):
 			outer = MIMEMultipart()
 			outer['Subject'] = 'Contents of directory %s' % os.path.abspath(directory)
 			outer['To'] = 'GHSNerds@gmail.com'
-			outer['From'] = args.sender				
+			outer['From'] = userEmail				
 				for filename in os.listdir(directory):
 					path = os.path.join(directory, filename)
 					if not os.path.isfile(path):
