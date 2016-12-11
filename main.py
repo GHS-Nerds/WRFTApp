@@ -59,36 +59,13 @@ class settingsScreen(Screen):
 
 class recordCatchScreen(Screen):
 	def on_touch_down(self, touch):
-		if self.collide_point(*touch.pos):
-			parser = ArgumentParser(description="""\Send the contents of a directory as a MIME message.
-Unless the -o option is given, the email is sent by forwarding to your local
-SMTP server, which then does the normal delivery process.  Your local machine
-must be running an SMTP server.""")
-			#parser.add_argument('-d', '--directory',
-                        #help="""Mail the contents of the specified directory,
-                        #otherwise use the current directory.  Only the regular
-                        #files in the directory are sent, and we don't recurse to
-                        #subdirectories.""")
-			parser.add_argument('-o', '--output',metavar='FILE',
-                        help="""Print the composed message to FILE instead of
-                        sending the message to the SMTP server.""")
-			parser.add_argument('-s', '--sender', required=True,
-                        help='The value of the From: header (required)')
-			#parser.add_argument('-r', '--recipient', required=True,
-                        #action='append', metavar='RECIPIENT',
-                        #default=[], dest='recipients',
-                        #help='A To: header value (at least one required)')
-			args = parser.parse_args()
+		if self.collide_point(*touch.pos):			
 			directory = '/etc/WRFT'
-			if not directory:
-				directory = '.'
-				# Create the enclosing (outer) message
-				outer = MIMEMultipart()
-				outer['Subject'] = 'Contents of directory %s' % os.path.abspath(directory)
-				outer['To'] = COMMASPACE.join('GHSNerds@gmail.com')
-				outer['From'] = args.sender
-				outer.preamble = 'You will not see this in a MIME-aware mail reader.\n'
-				
+			# Create the enclosing (outer) message
+			outer = MIMEMultipart()
+			outer['Subject'] = 'Contents of directory %s' % os.path.abspath(directory)
+			outer['To'] = 'GHSNerds@gmail.com'
+			outer['From'] = args.sender				
 				for filename in os.listdir(directory):
 					path = os.path.join(directory, filename)
 					if not os.path.isfile(path):
@@ -120,13 +97,10 @@ must be running an SMTP server.""")
 												outer.attach(msg)
     												# Now send or store the message
 												composed = outer.as_string()
-												if args.output:
-													with open(args.output, 'w') as fp:
-														fp.write(composed)
-														else:
-															with smtplib.SMTP('localhost') as s
-															s.sendmail(args.sender, 'GHSNerds@gmail.com', composed)
-																   pass
+												with smtplib.SMTP('localhost') as s
+													s.sendmail(msg)
+													s.quit()
+													pass
 
 class screenManagement(screenManagement):
 	pass
