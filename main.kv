@@ -1,0 +1,57 @@
+#: import FadeTransition kivy.uix.screenmanager.FadeTransition
+
+ScreenManagement:
+    transition: FadeTransition()
+    HomeScreen:
+    SettingsScreen:
+    RecordCatchScreen:
+    
+<HomeScreen>:
+    name: 'home'
+    AnchorLayout:
+        anchor_x: 'left'
+        anchor_y: 'top'  
+        Button:
+            on_release: app.root.current = 'settings'
+            text: 'Settings'
+            font_size: 40
+            size_hint: 0.25,0.25
+    AnchorLayout:
+        anchor_x: 'right'
+        anchor_y: 'top' 
+        Button:
+            on_release: app.root.current = 'recordCatch'
+            text: 'Record catch'
+            font_size: 40
+            size_hint: 0.25,0.25
+
+<SettingsScreen>:
+    name: 'settings'
+    AnchorLayout:
+        anchor_x: 'left'
+        anchor_y: 'top'      
+        Button:
+            on_release: app.root.current = 'home'
+            text: 'Back'
+            font_size: 40
+            size_hint: 0.25,0.25
+            
+            
+<RecordCatchScreen>:
+    name: 'recordCatch'
+    AnchorLayout:
+        anchor_x: 'center'
+        anchor_y: 'center'      
+        Button:
+            text: 'Send email'
+            size_hint: 0.5,0.5
+            font_size: 40
+    AnchorLayout:
+        anchor_x: 'left'
+        anchor_y: 'top'      
+        Button:
+            on_release: app.root.current = 'home'
+            text: 'Back'
+            font_size: 40
+            size_hint: 0.25,0.25
+        
