@@ -1,8 +1,8 @@
 # WRFTApp 0.1.0
 ----------
-##Aims:
+## Aims:
 
-###This project is an app for the Wester Ross Fisheries Trust. It will:
+### This project is an app for the Wester Ross Fisheries Trust. It will:
 
   * Provide casual anglers with databases of Fish species, Insect life, Local Geology and good fishing locations,
 
@@ -12,7 +12,7 @@
   
   * All inside the Wester Ross Area
 
-##Specifications:
+## Specifications:
 
   * We are using [Kivy](https://kivy.org/) for design tasks.
   
