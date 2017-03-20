@@ -5,6 +5,7 @@ from kivy.uix.screenmanager import ScreenManager, Screen, FadeTransition
 from kivy.properties import ObjectProperty
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.widget import Widget
+from kivy.uix.textinput import TextInput
 
           
 class HomeScreen(Screen):
