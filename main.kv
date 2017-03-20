@@ -24,6 +24,22 @@ ScreenManagement:
             text: 'Record catch'
             font_size: 40
             size_hint: 0.25,0.25
+    AnchorLayout:
+        anchor_x: 'left'
+        anchor_y: 'bottom'  
+        Button:
+            on_release: app.root.current = 'Weather'
+            text: 'Weather'
+            font_size: 40
+            size_hint: 0.25,0.25
+    AnchorLayout:
+        anchor_x: 'right'
+        anchor_y: 'bottom'  
+        Button:
+            on_release: app.root.current = 'Map'
+            text: 'Map'
+            font_size: 40
+            size_hint: 0.25,0.25
 
 <SettingsScreen>:
     name: 'settings'
