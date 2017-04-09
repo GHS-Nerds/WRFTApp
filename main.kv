@@ -110,7 +110,8 @@ ScreenManagement:
             id: recorddata
             text: 'Submit Data'
             font_size: 20
-            on_release: root.csvPackage(root.NameIn, root.fishSpeciesIn, root.fishWeightIn, root.fishLengthIn) app.root.current = 'home'
+            on_release: root.csvPackage(root.NameIn, root.fishSpeciesIn, root.fishWeightIn, root.fishLengthIn)
+            on_release: app.root.current = 'home'
 
 <WeatherScreen>:
     name: 'weather'
