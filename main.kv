@@ -59,13 +59,14 @@ ScreenManagement:
 <RecordCatchScreen>:
     name: 'recordCatch'
     fishSpeciesIn: root.fishSpeciesIn
+    fullNameIn: root.fullNameIn
     GridLayout:
         rows: 3
         cols: 3
         Label:
             text: 'Please enter your full name'
         TextInput:
-            id: NameIn
+            id: fullNameIn
             font_size: 20
             multiline:False
         Button:
@@ -81,10 +82,10 @@ ScreenManagement:
         Button:
             text: 'Next'
             font_size: 20
-            on_release: app.root.current = 'wl'
+            on_release: app.root.current = 'swlScreen'
 
 <swlScreen>:
-    name: 'wl'
+    name: 'swlScreen'
     fishWeightIn: root.fishWeightIn
     fishLengthIn: root.fishLengthIn
     GridLayout:
@@ -107,10 +108,9 @@ ScreenManagement:
             font_size: 20
             multiline:False
         Button:
-            id: recorddata
             text: 'Submit Data'
             font_size: 20
-            on_release: root.csvPackage(root.NameIn, root.fishSpeciesIn, root.fishWeightIn, root.fishLengthIn)
+            on_release: root.csvPackage(root.fullNameIn, root.fishSpeciesIn, root.fishWeightIn, root.fishLengthIn)
             on_release: app.root.current = 'home'
 
 <WeatherScreen>:
