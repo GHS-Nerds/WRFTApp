@@ -4,7 +4,7 @@ from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen, FadeTransition
 from kivy.properties import ObjectProperty
-from kivy.properties import NumericProperty 
+from kivy.properties import NumericProperty
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.widget import Widget
 import plyer
@@ -79,10 +79,9 @@ class RecordCatchScreen(Screen):
     This is important for translation on server side
     '''
 
-    def csvPackage(self, fNameIn, sNameIn, fishSpeciesIn, fishWeightIn, fishLengthIn):
+    def csvPackage(self, NameIn, fishSpeciesIn, fishWeightIn, fishLengthIn):
 
-        fName = ['f_name', fNameIn]
-        sName = ['s_name', sNameIn]
+        Name = ['name', NameIn]
         fishSpecies = ['fishName', fishSpeciesIn]
         fishWeight = ['fishWeight', fishWeightIn]
         fishLength = ['fishLength', fishLengthIn]
