@@ -8,6 +8,7 @@ ScreenManagement:
     RecordCatchScreen:
     WeatherScreen:
     MapScreen:
+    swlScreen:
 
 <HomeScreen>:
     name: 'home'
@@ -58,10 +59,7 @@ ScreenManagement:
 
 <RecordCatchScreen>:
     name: 'recordCatch'
-    fishSize: fishLengthIn
-    fNameIn: root.fNameIn
-    sNameIn: root.sNameIn
-    fishSpeciesIn: root.fishSpeciesIn
+    NameIn: root.NameIn
     GridLayout:
         rows: 3
         cols: 3
@@ -87,8 +85,10 @@ ScreenManagement:
         	id: recordName
             text: 'Next'
             font_size: 20
-            on_release: root.csvPackage(root.NameIn) app.root.current = 'swlScreen'
+            on_release: root.csvPackage(root.NameIn) app.root.current = 'swl'
 
+<swlScreen>:
+    name: 'swl'
 
 
 <WeatherScreen>:
