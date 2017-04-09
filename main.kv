@@ -58,62 +58,56 @@ ScreenManagement:
 
 <RecordCatchScreen>:
     name: 'recordCatch'
-    NameIn: root.NameIn
+    fishSpeciesIn: root.fishSpeciesIn
     GridLayout:
         rows: 3
         cols: 3
+        Label:
+            text: 'Please enter your full name'
+        TextInput:
+            id: NameIn
+            font_size: 20
+            multiline:False
         Button:
             on_release: app.root.current = 'home'
-            text: 'Back'
+            text: 'Cancel'
             font_size: 20
-        Button:
-        	id: HiddenSpacer
-            text: ' '
-            font_size: 20
-            background_color: (0, 0, 0, 0)
-        Button:
-            id: HiddenSpacer
-            text: ' '
-            font_size: 20
-            background_color: (0, 0, 0, 0)
         Label:
-        	text: 'Please enter your full name'
+            text: 'Please enter the Species of your fish'
         TextInput:
-        	id: NameIn
-			    font_size: 20
-        	multiline:False
+            id: fishSpeciesIn
+            font_size: 20
+            multiline:False
         Button:
-        	  id: recordName
             text: 'Next'
             font_size: 20
-            on_release: app.root.current = 'swl'
+            on_release: app.root.current = 'wl'
 
 <swlScreen>:
-    name: 'swl'
-    fishSpeciesIn: root.fishSpeciesIn
+    name: 'wl'
     fishWeightIn: root.fishWeightIn
     fishLengthIn: root.fishLengthIn
     GridLayout:
         rows: 3
         cols: 3
         Label:
-          text: 'Please enter the Species of your fish'
+            text: 'Please enter the Length of your fish'
         TextInput:
-          id: fishSpeciesIn
-          font_size: 20
-          multiline:False
+            id: fishLengthIn
+            font_size: 20
+            multiline:False
         Button:
             on_release: app.root.current = 'home'
             text: 'Cancel'
             font_size: 20
         Label:
-        	text: 'Please enter the weight of your fish'
+            text: 'Please enter the weight of your fish'
         TextInput:
-        	id: fishWeightIn
-          font_size: 20
-        	multiline:False
+            id: fishWeightIn
+            font_size: 20
+            multiline:False
         Button:
-        	  id: recorddata
+            id: recorddata
             text: 'Submit Data'
             font_size: 20
             on_release: root.csvPackage(root.NameIn, root.fishSpeciesIn, root.fishWeightIn, root.fishLengthIn) app.root.current = 'home'
