@@ -6,35 +6,55 @@ ScreenManagement:
     HomeScreen:
     SettingsScreen:
     RecordCatchScreen:
+    WeatherScreen:
+    MapScreen:
 
 <HomeScreen>:
     name: 'home'
     AnchorLayout:
-        anchor_x: 'left'
+        anchor_x: 'right'
         anchor_y: 'top'
         Button:
             on_release: app.root.current = 'settings'
             text: 'Settings'
             font_size: 20
-            size_hint: 0.25,0.25
+            size_hint: 0.5,0.5
     AnchorLayout:
-        anchor_x: 'right'
+        anchor_x: 'left'
         anchor_y: 'top'
         Button:
             on_release: app.root.current = 'recordCatch'
-            text: 'record catch'
+            text: 'Record catch'
             font_size: 20
-            size_hint: 0.25,0.25
+            size_hint: 0.5,0.5
+    AnchorLayout:
+        anchor_x: 'left'
+        anchor_y: 'bottom'
+        Button:
+            on_release: app.root.current = 'weather'
+            text: 'Weather'
+            font_size: 20
+            size_hint: 0.5,0.5
+    AnchorLayout:
+        anchor_x: 'right'
+        anchor_y: 'bottom'
+        Button:
+            on_release: app.root.current = 'map'
+            text: 'Map'
+            font_size: 20
+            size_hint: 0.5,0.5
 
 <SettingsScreen>:
     name: 'settings'
     FloatLayout:
         Button:
+    AnchorLayout:
+        anchor_x: 'left'
+        anchor_y: 'top'
             on_release: app.root.current = 'home'
             text: 'Back'
             font_size: 20
             size_hint: 0.5, 0.5
-            pos_hint: {'x': 0.5, 'y': 0.5}
 
 
 <RecordCatchScreen>:
@@ -69,4 +89,27 @@ ScreenManagement:
             text: 'Package Data \nDEBUG BUTTON.\n WILL DISAPPEAR'
             font_size: 20
             on_release: root.csvPackage(root.fNameIn, root.sNameIn, root.fishSpeciesIn, root.fishWeightCollection(), root.fishLengthCollection())
-        
+
+<WeatherScreen>:
+    name: 'weather'
+    FloatLayout:
+        Button:
+    AnchorLayout:
+        anchor_x: 'left'
+        anchor_y: 'top'
+            on_release: app.root.current = 'home'
+            text: 'Back'
+            font_size: 20
+            size_hint: 0.5, 0.5
+
+<MapScreen>:
+    name: 'map'
+    FloatLayout:
+        Button:
+    AnchorLayout:
+        anchor_x: 'left'
+        anchor_y: 'top'
+            on_release: app.root.current = 'home'
+            text: 'Back'
+            font_size: 20
+            size_hint: 0.5, 0.5
