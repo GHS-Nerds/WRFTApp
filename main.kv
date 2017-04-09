@@ -75,17 +75,17 @@ ScreenManagement:
             font_size: 20
             background_color: (0, 0, 0, 0)
         Button:
-            text: 'Send email \nDEBUG BUTTON. \nWILL DISAPPEAR'
+            text: 'Send email'
             font_size: 20
         Label:
-        	text: 'Please enter the size of your fish in cm:'
+        	text: 'Please enter your full name'
         TextInput:
-        	id: fishLengthIn
+        	id: nameIn
 			font_size: 20
         	multiline:False
         Button:
-        	id: recordSize
-            text: 'Package Data \nDEBUG BUTTON.\n WILL DISAPPEAR'
+        	id: recordName
+            text: 'Next'
             font_size: 20
             on_release: root.csvPackage(root.fNameIn, root.sNameIn, root.fishSpeciesIn, root.fishWeightCollection(), root.fishLengthCollection())
 
