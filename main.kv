@@ -73,12 +73,14 @@ ScreenManagement:
             font_size: 20
             background_color: (0, 0, 0, 0)
         Button:
-            text: 'Send email'
-            font_size: 20
+        id: HiddenSpacer
+        text: ' '
+        font_size: 20
+        background_color: (0, 0, 0, 0)
         Label:
         	text: 'Please enter your full name'
         TextInput:
-        	id: nameIn
+        	id: NameIn
 			font_size: 20
         	multiline:False
         Button:
@@ -89,6 +91,35 @@ ScreenManagement:
 
 <swlScreen>:
     name: 'swl'
+    NameIn: root.NameIn
+    GridLayout:
+        rows: 3
+        cols: 3
+        Button:
+            on_release: app.root.current = 'home'
+            text: 'Back'
+            font_size: 20
+        Button:
+        	id: HiddenSpacer
+            text: ' '
+            font_size: 20
+            background_color: (0, 0, 0, 0)
+        Button:
+            id: HiddenSpacer
+            text: ' '
+            font_size: 20
+            background_color: (0, 0, 0, 0)
+        Label:
+        	text: 'Please enter your full name'
+        TextInput:
+        	id: nameIn
+			font_size: 20
+        	multiline:False
+        Button:
+        	id: recorddata
+            text: 'Submit Data'
+            font_size: 20
+            on_release: root.csvPackage(root.fishSpeciesIn, root.fishWeightIn, root.fishLengthIn) app.root.current = 'home'
 
 
 <WeatherScreen>:
