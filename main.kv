@@ -1,3 +1,4 @@
+#:kivy 1.8.0
 #: import FadeTransition kivy.uix.screenmanager.FadeTransition
 
 ScreenManagement:
@@ -5,69 +6,67 @@ ScreenManagement:
     HomeScreen:
     SettingsScreen:
     RecordCatchScreen:
-    
+
 <HomeScreen>:
     name: 'home'
     AnchorLayout:
         anchor_x: 'left'
-        anchor_y: 'top'  
+        anchor_y: 'top'
         Button:
             on_release: app.root.current = 'settings'
             text: 'Settings'
-            font_size: 40
+            font_size: 20
             size_hint: 0.25,0.25
     AnchorLayout:
         anchor_x: 'right'
-        anchor_y: 'top' 
+        anchor_y: 'top'
         Button:
             on_release: app.root.current = 'recordCatch'
-            text: 'Record catch'
-            font_size: 40
-            size_hint: 0.25,0.25
-    AnchorLayout:
-        anchor_x: 'left'
-        anchor_y: 'bottom'  
-        Button:
-            on_release: app.root.current = 'Weather'
-            text: 'Weather'
-            font_size: 40
-            size_hint: 0.25,0.25
-    AnchorLayout:
-        anchor_x: 'right'
-        anchor_y: 'bottom'  
-        Button:
-            on_release: app.root.current = 'Map'
-            text: 'Map'
-            font_size: 40
+            text: 'record catch'
+            font_size: 20
             size_hint: 0.25,0.25
 
 <SettingsScreen>:
     name: 'settings'
-    AnchorLayout:
-        anchor_x: 'left'
-        anchor_y: 'top'      
+    FloatLayout:
         Button:
             on_release: app.root.current = 'home'
             text: 'Back'
-            font_size: 40
-            size_hint: 0.25,0.25
-            
-            
+            font_size: 20
+            size_hint: 0.5, 0.5
+            pos_hint: {'x': 0.5, 'y': 0.5}
+
+
 <RecordCatchScreen>:
     name: 'recordCatch'
-    AnchorLayout:
-        anchor_x: 'center'
-        anchor_y: 'center'      
-        Button:
-            text: 'Send email'
-            size_hint: 0.5,0.5
-            font_size: 40
-    AnchorLayout:
-        anchor_x: 'left'
-        anchor_y: 'top'      
+    fishSize: fishLengthIn
+    fNameIn: root.fNameIn
+    sNameIn: root.sNameIn
+    fishSpeciesIn: root.fishSpeciesIn
+    GridLayout:
+        rows: 3
+        cols: 3
         Button:
             on_release: app.root.current = 'home'
             text: 'Back'
-            font_size: 40
-            size_hint: 0.25,0.25
+            font_size: 20
+        Button:
+        	id: HiddenSpacer
+            text: ' '
+            font_size: 20
+            background_color: (0, 0, 0, 0)
+        Button:
+            text: 'Send email \nDEBUG BUTTON. \nWILL DISAPPEAR'
+            font_size: 20
+        Label:
+        	text: 'Please enter the size of your fish in cm:'
+        TextInput:
+        	id: fishLengthIn
+			font_size: 20
+        	multiline:False
+        Button:
+        	id: recordSize
+            text: 'Package Data \nDEBUG BUTTON.\n WILL DISAPPEAR'
+            font_size: 20
+            on_release: root.csvPackage(root.fNameIn, root.sNameIn, root.fishSpeciesIn, root.fishWeightCollection(), root.fishLengthCollection())
         
