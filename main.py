@@ -12,14 +12,13 @@ import csv
 
 lochNames = ['Loch Tollie', 'Loch Bad an Sgalaig', 'Dubh Loch', 'Loch Garbhaig', 'Loch nam Breac', 'Loch Feur', 'Loch a\' Gharbh-doire', 'Loch Airigh Mhic Criadh', 'Loch Airigh a\' Phuill', 'Loch nam Buainichean', 'Loch na Feithe Mugaig', 'Loch Doire na h-Airighe', 'Loch an Aird-sheilg']
 
-'''
-DEBUG
-'''
-fNameIn = 'Roddy'
-sNameIn = 'MacRae'
-fishSpeciesIn = 'Trout'
-
 class HomeScreen(Screen):
+    pass
+
+class WeatherScreen(Screen):
+    pass
+
+class MapScreen(Screen):
     pass
 
 class SettingsScreen(Screen):
