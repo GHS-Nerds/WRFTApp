@@ -86,7 +86,7 @@ ScreenManagement:
         	id: recordName
             text: 'Next'
             font_size: 20
-            on_release: root.csvPackage(root.NameIn) app.root.current = 'swl'
+            on_release: app.root.current = 'swl'
 
 <swlScreen>:
     name: 'swl'
@@ -113,14 +113,14 @@ ScreenManagement:
         Label:
         	text: 'Please enter your full name'
         TextInput:
-        	id: nameIn
+        	id: swl
 			font_size: 20
         	multiline:False
         Button:
         	id: recorddata
             text: 'Submit Data'
             font_size: 20
-            on_release: root.csvPackage(root.fishSpeciesIn, root.fishWeightIn, root.fishLengthIn) app.root.current = 'home'
+            on_release: root.csvPackage(root.NameIn, root.fishSpeciesIn, root.fishWeightIn, root.fishLengthIn) app.root.current = 'home'
 
 <WeatherScreen>:
     name: 'weather'
