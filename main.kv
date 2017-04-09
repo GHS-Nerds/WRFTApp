@@ -87,7 +87,9 @@ ScreenManagement:
         	id: recordName
             text: 'Next'
             font_size: 20
-            on_release: root.csvPackage(root.fNameIn, root.sNameIn, root.fishSpeciesIn, root.fishWeightCollection(), root.fishLengthCollection())
+            on_release: root.csvPackage(root.NameIn) app.root.current = 'swlScreen'
+
+
 
 <WeatherScreen>:
     name: 'weather'
