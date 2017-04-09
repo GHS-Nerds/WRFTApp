@@ -1,5 +1,5 @@
 #:kivy 1.8.0
-#: import FadeTransition kivy.uix.screenmanager.FadeTransition
+#:import FadeTransition kivy.uix.screenmanager.FadeTransition
 
 ScreenManagement:
     transition: FadeTransition()
@@ -80,10 +80,10 @@ ScreenManagement:
         	text: 'Please enter your full name'
         TextInput:
         	id: NameIn
-			font_size: 20
+			    font_size: 20
         	multiline:False
         Button:
-        	id: recordName
+        	  id: recordName
             text: 'Next'
             font_size: 20
             on_release: app.root.current = 'swl'
@@ -96,28 +96,24 @@ ScreenManagement:
     GridLayout:
         rows: 3
         cols: 3
+        Label:
+          text: 'Please enter the Species of your fish'
+        TextInput:
+          id: fishSpeciesIn
+          font_size: 20
+          multiline:False
         Button:
             on_release: app.root.current = 'home'
             text: 'Cancel'
             font_size: 20
-        Button:
-        	id: HiddenSpacer
-            text: ' '
-            font_size: 20
-            background_color: (0, 0, 0, 0)
-        Button:
-            id: HiddenSpacer
-            text: ' '
-            font_size: 20
-            background_color: (0, 0, 0, 0)
         Label:
-        	text: 'Please enter your full name'
+        	text: 'Please enter the weight of your fish'
         TextInput:
-        	id: swlIn
+        	id: fishWeightIn
           font_size: 20
         	multiline:False
         Button:
-        	id: recorddata
+        	  id: recorddata
             text: 'Submit Data'
             font_size: 20
             on_release: root.csvPackage(root.NameIn, root.fishSpeciesIn, root.fishWeightIn, root.fishLengthIn) app.root.current = 'home'
