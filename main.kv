@@ -8,7 +8,6 @@ ScreenManagement:
     RecordCatchScreen:
     WeatherScreen:
     MapScreen:
-    swlScreen:
 
 <HomeScreen>:
     name: 'home'
@@ -58,50 +57,31 @@ ScreenManagement:
 
 <RecordCatchScreen>:
     name: 'recordCatch'
-    fishSpeciesIn: root.fishSpeciesIn
-    nameIn: root.nameIn
+    fishSpeciesIn: fishSpeciesIn.text
+    nameIn: nameIn.text
+    fishWeightIn: fishWeightIn.text
+    fishLengthIn: fishLengthIn.text
     GridLayout:
-        rows: 3
-        cols: 3
+        rows: 6
+        cols: 2
         Label:
             text: 'Please enter your full name'
         TextInput:
             id: nameIn
             font_size: 20
             multiline:False
-        Button:
-            on_release: app.root.current = 'home'
-            text: 'Cancel'
-            font_size: 20
         Label:
             text: 'Please enter the Species of your fish'
         TextInput:
             id: fishSpeciesIn
             font_size: 20
             multiline:False
-        Button:
-            text: 'Next'
-            font_size: 20
-            on_release: root.csvPackage(root.nameIn, root.fishSpeciesIn)
-            on_release: app.root.current = 'swlScreen'
-
-<swlScreen>:
-    name: 'swlScreen'
-    fishWeightIn: root.fishWeightIn
-    fishLengthIn: root.fishLengthIn
-    GridLayout:
-        rows: 3
-        cols: 3
         Label:
             text: 'Please enter the Length of your fish'
         TextInput:
             id: fishLengthIn
             font_size: 20
             multiline:False
-        Button:
-            on_release: app.root.current = 'home'
-            text: 'Cancel'
-            font_size: 20
         Label:
             text: 'Please enter the weight of your fish'
         TextInput:
@@ -111,7 +91,7 @@ ScreenManagement:
         Button:
             text: 'Submit Data'
             font_size: 20
-            on_release: root.csvPackage(root.fishWeightCollection(), root.fishLengthCollection())
+            on_release: app.csvPackage(root.nameIn, root.fishSpeciesIn, root.fishWeightIn, root.fishLengthIn, app.index)
             on_release: app.root.current = 'home'
 
 <WeatherScreen>:
