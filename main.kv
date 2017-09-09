@@ -89,6 +89,11 @@ ScreenManagement:
             font_size: 20
             multiline:False
         Button:
+            on_release: app.root.current = 'home'
+            text: 'Back'
+            font_size: 20
+            size_hint: 0.5, 0.5
+        Button:
             text: 'Submit Data'
             font_size: 20
             on_release: app.csvPackage(root.nameIn, root.fishSpeciesIn, root.fishWeightIn, root.fishLengthIn, app.index)
