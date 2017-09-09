@@ -19,6 +19,7 @@ ScreenManagement:
             text: 'Settings'
             font_size: 20
             size_hint: 0.5,0.5
+            background_color: (1.0, 0.0, 0.0, 1.0)
     AnchorLayout:
         anchor_x: 'left'
         anchor_y: 'top'
@@ -27,6 +28,7 @@ ScreenManagement:
             text: 'Record catch'
             font_size: 20
             size_hint: 0.5,0.5
+            background_color: (0.0, 1.0, 1.0, 1.0)
     AnchorLayout:
         anchor_x: 'left'
         anchor_y: 'bottom'
@@ -35,6 +37,7 @@ ScreenManagement:
             text: 'Weather'
             font_size: 20
             size_hint: 0.5,0.5
+            background_color: (0.0, 0.0, 1.0, 1.0)
     AnchorLayout:
         anchor_x: 'right'
         anchor_y: 'bottom'
@@ -43,6 +46,7 @@ ScreenManagement:
             text: 'Map'
             font_size: 20
             size_hint: 0.5,0.5
+            background_color: (0.0, 1.0, 0.0, 1.0)
 
 <SettingsScreen>:
     name: 'settings'
@@ -54,6 +58,7 @@ ScreenManagement:
             text: 'Back'
             font_size: 20
             size_hint: 0.5, 0.5
+            background_color: (1.0, 0.0, 0.0, 1.0)
 
 <RecordCatchScreen>:
     name: 'recordCatch'
@@ -93,11 +98,13 @@ ScreenManagement:
             text: 'Back'
             font_size: 20
             size_hint: 0.5, 0.5
+            background_color: (1.0, 0.0, 0.0, 1.0)
         Button:
             text: 'Submit Data'
             font_size: 20
             on_release: app.csvPackage(root.nameIn, root.fishSpeciesIn, root.fishWeightIn, root.fishLengthIn, app.index)
             on_release: app.root.current = 'home'
+            background_color: (0.0, 1.0, 1.0, 1.0)
 
 <WeatherScreen>:
     name: 'weather'
@@ -109,6 +116,7 @@ ScreenManagement:
             text: 'Back'
             font_size: 20
             size_hint: 0.5, 0.5
+            background_color: (1.0, 0.0, 0.0, 1.0)
 
 <MapScreen>:
     name: 'map'
@@ -120,3 +128,4 @@ ScreenManagement:
             text: 'Back'
             font_size: 20
             size_hint: 0.5, 0.5
+            background_color: (1.0, 0.0, 0.0, 1.0)
