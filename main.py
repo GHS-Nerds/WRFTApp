@@ -8,8 +8,9 @@ from kivy.properties import NumericProperty
 from kivy.properties import StringProperty
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.widget import Widget
-import plyer
-import pandas
+import numpy as np
+
+
 
 lochNames = ['Loch Tollie', 'Loch Bad an Sgalaig', 'Dubh Loch', 'Loch Garbhaig', 'Loch nam Breac', 'Loch Feur', 'Loch a\' Gharbh-doire', 'Loch Airigh Mhic Criadh', 'Loch Airigh a\' Phuill', 'Loch nam Buainichean', 'Loch na Feithe Mugaig', 'Loch Doire na h-Airighe', 'Loch an Aird-sheilg']
 
@@ -22,6 +23,17 @@ class WeatherScreen(Screen):
 class MapScreen(Screen):
     pass
 
+class InfoScreen(Screen):
+    pass
+
+class InvaScreen(Screen):
+    pass
+
+class NonInvaScreen(Screen):
+    pass
+
+class LicencesScreen(Screen):
+    pass
 
 class SettingsScreen(Screen):
 
@@ -62,23 +74,43 @@ class MainApp(App):
     fish length as fishLengthIn
     This is important for translation on server side
     '''
-    def csvPackage(self, nameIn, fishSpeciesIn, fishWeightIn, fishLengthIn, index):
-        finalData = {
-            'index': [0],
-            'nameIn':nameIn,
-            'fishSpeciesIn':fishSpeciesIn,
-            'fishWeightIn':fishWeightIn,
-            'fishLengthIn':fishLengthIn
-        }
-        df = pandas.DataFrame(finalData)
-        df = df.set_index('index')
-        df.to_csv('C:/Users/rwmac/Documents/Programming/WRFTApp/InProgress/WRFT.csv')
-        print('\nDataFrame\n', df)
-        #Find the last index of the df and make the next index
-        index = (df.tail(1).index)+1
-        print('\n',index, '\n')
-        return df
-        return index
+
+    def textPackage(self, nameIn, fishSpeciesIn, fishWeightIn, fishLengthIn):
+            #Peace of mind convertions to float values
+            fishWeightIn = int(fishWeightIn)
+            fishLengthIn = int(fishLengthIn)
+
+            #Convert to bytes for np
+            nameIn = str.encode(nameIn)
+            fishSpeciesIn = str.encode(fishSpeciesIn)
+
+            #Checking input variable types
+            if (type(fishWeightIn) is int) == False:
+                typeChecks = True
+                print('Incorrect Type fishWeightIn')
+                #Make this produce an error code
+            elif (type(fishWeightIn) is int) == True:
+                typeChecks = False
+                fishWeightIn = bytes([fishWeightIn])
+                print('Correct Type fishWeightIn')
+
+            if (type(fishLengthIn) is int) == False:
+                typeChecks = True
+                print('Incorrect Type fishLengthIn')
+                #Make this produce an error code
+            elif (type(fishLengthIn) is int) == True:
+                typeChecks = False
+                fishLengthIn = bytes([fishLengthIn])
+                print('Correct Type fishLengthIn')
+
+
+            if typeChecks == False:
+                print(nameIn, fishSpeciesIn, fishWeightIn, fishLengthIn)
+                data = np.array([nameIn, fishSpeciesIn, fishWeightIn, fishLengthIn],dtype=[('Name', 'S20'), ('FishSpecies', 'S20'), ('FishWeight', 'f4'), ('FishLength', 'f4')])
+                data = np.savetxt('C:/Users/rwmac/Documents/Programming/WRFTApp/InProgress/WRFT.txt',data, fmt=['%s', '%s', '%i', '%i'])
+                return data
+            elif typeChecks == True:
+                print('Error in input types: Data not encoded')
 
     def build(self):
         return kivyFile
