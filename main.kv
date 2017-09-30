@@ -158,10 +158,38 @@ ScreenManagement:
             text: 'Best places to go and Licences'
             font_size: 20
             size_hint: 0.5,0.5
-            background_color: (0.0, 1.0, 0.0, 1.0)
+            background_color: (0.0, 1.0, 1.0, 1.0)
 
 <InvaScreen>:
     name: 'Inva'
+    ScrollView:
+
+    GridLayout:
+        cols: 1
+        padding: 10
+        spacing: 30
+        size_hint_y: None
+        height: self.minimum_height
+        Button:
+            on_release: app.root.current = 'home'
+            text: 'Back'
+            font_size: 20
+            background_color: (1.0, 0.0, 0.0, 1.0)
+        Button:
+            on_release: app.root.current = 'home'
+            text: 'Back'
+            font_size: 20
+            background_color: (1.0, 0.0, 0.0, 1.0)
+        Button:
+            on_release: app.root.current = 'home'
+            text: 'Back'
+            font_size: 20
+            background_color: (1.0, 0.0, 0.0, 1.0)
+        Button:
+            on_release: app.root.current = 'home'
+            text: 'Back'
+            font_size: 20
+            background_color: (1.0, 0.0, 0.0, 1.0)
 
 <NonInvaScreen>:
     name: 'NonInva'

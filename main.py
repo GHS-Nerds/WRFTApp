@@ -9,7 +9,10 @@ from kivy.properties import StringProperty
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.widget import Widget
 import numpy as np
-
+from kivy.uix.gridlayout import GridLayout
+from kivy.uix.button import Button
+from kivy.uix.scrollview import ScrollView
+from kivy.core.window import Window
 
 
 lochNames = ['Loch Tollie', 'Loch Bad an Sgalaig', 'Dubh Loch', 'Loch Garbhaig', 'Loch nam Breac', 'Loch Feur', 'Loch a\' Gharbh-doire', 'Loch Airigh Mhic Criadh', 'Loch Airigh a\' Phuill', 'Loch nam Buainichean', 'Loch na Feithe Mugaig', 'Loch Doire na h-Airighe', 'Loch an Aird-sheilg']
@@ -23,10 +26,10 @@ class WeatherScreen(Screen):
 class MapScreen(Screen):
     pass
 
-class InfoScreen(Screen):
+class InvaScreen(Screen):
     pass
 
-class InvaScreen(Screen):
+class InfoScreen(Screen):
     pass
 
 class NonInvaScreen(Screen):
