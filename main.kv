@@ -144,7 +144,7 @@ ScreenManagement:
         anchor_y: 'bottom'
         Button:
             on_release: app.root.current = 'NonInva'
-            text: 'Non-Invasive Species'
+            text: 'Fish Species'
             font_size: 20
             size_hint: 0.5,0.5
             background_color: (0.0, 1.0, 0.0, 1.0)
@@ -177,82 +177,82 @@ ScreenManagement:
             size_hint_y: None
             height: self.minimum_height
             Button:
-                on_release: app.root.current = 'home'
+                on_release: app.root.current = 'Info'
                 text: 'Back'
                 font_size: 20
                 background_color: rgba(87, 67, 169)
             Button:
-                on_release: app.root.current = 'home'
+                on_release: app.root.current = 'Info'
                 text: 'Back'
                 font_size: 20
                 background_color: rgba(87, 67, 169)
             Button:
-                on_release: app.root.current = 'home'
+                on_release: app.root.current = 'Info'
                 text: 'Back'
                 font_size: 20
                 background_color: rgba(87, 67, 169)
             Button:
-                on_release: app.root.current = 'home'
+                on_release: app.root.current = 'Info'
                 text: 'Back'
                 font_size: 20
                 background_color: rgba(87, 67, 169)
             Button:
-                on_release: app.root.current = 'home'
+                on_release: app.root.current = 'Info'
                 text: 'Back'
                 font_size: 20
                 background_color: rgba(87, 67, 169)
             Button:
-                on_release: app.root.current = 'home'
+                on_release: app.root.current = 'Info'
                 text: 'Back'
                 font_size: 20
                 background_color: rgba(87, 67, 169)
             Button:
-                on_release: app.root.current = 'home'
+                on_release: app.root.current = 'Info'
                 text: 'Back'
                 font_size: 20
                 background_color: rgba(87, 67, 169)
             Button:
-                on_release: app.root.current = 'home'
+                on_release: app.root.current = 'Info'
                 text: 'Back'
                 font_size: 20
                 background_color: rgba(87, 67, 169)
             Button:
-                on_release: app.root.current = 'home'
+                on_release: app.root.current = 'Info'
                 text: 'Back'
                 font_size: 20
                 background_color: rgba(87, 67, 169)
             Button:
-                on_release: app.root.current = 'home'
+                on_release: app.root.current = 'Info'
                 text: 'Back'
                 font_size: 20
                 background_color: rgba(87, 67, 169)
             Button:
-                on_release: app.root.current = 'home'
+                on_release: app.root.current = 'Info'
                 text: 'Back'
                 font_size: 20
                 background_color: rgba(87, 67, 169)
             Button:
-                on_release: app.root.current = 'home'
+                on_release: app.root.current = 'Info'
                 text: 'Back'
                 font_size: 20
                 background_color: rgba(87, 67, 169)
             Button:
-                on_release: app.root.current = 'home'
+                on_release: app.root.current = 'Info'
                 text: 'Back'
                 font_size: 20
                 background_color: rgba(87, 67, 169)
             Button:
-                on_release: app.root.current = 'home'
+                on_release: app.root.current = 'Info'
                 text: 'Back'
                 font_size: 20
                 background_color: rgba(87, 67, 169)
             Button:
-                on_release: app.root.current = 'home'
+                on_release: app.root.current = 'Info'
                 text: 'Back'
                 font_size: 20
                 background_color: rgba(87, 67, 169)
             Button:
-                on_release: app.root.current = 'home'
+                on_release: app.root.current = 'Info'
                 text: 'Back'
                 font_size: 20
                 background_color: rgba(87, 67, 169)
@@ -266,6 +266,12 @@ ScreenManagement:
             spacing: 40
             size_hint_y: None
             height: self.minimum_height
+            Button:
+                on_release: app.root.current = 'home'
+                text: 'Back'
+                font_size: 20
+                size_hint: 0.5, 0.5
+                background_color: rgba(87, 67, 169)
             Button:
                 on_release: app.root.current = 'Arctic charr'
                 text: 'Arctic charr (Salvelinus alpinus)'
@@ -304,35 +310,101 @@ ScreenManagement:
 
 <ArcticCharrScreen>:
     name: 'Arctic charr'
-    AnchorLayout:
-        anchor_x: 'center'
-        anchor_y: 'top'
+    GridLayout:
+        cols: 1
+        Button:
+            on_release: app.root.current = 'NonInva'
+            text: 'Back'
+            background_color: rgba(87, 67, 169)
         Image:
             source: 'Images/charr.png'
-    AnchorLayout:
-        anchor_x: 'left'
-        anchor_y: 'bottom'
         Label:
             text_size: self.size
             text: 'Though less well known than salmon or trout, charr are possibly the most numerous fish in Loch Maree. Charr are descended from sea going ancestors that colonised the loch after the last ice age some 10,000 years ago. Charr spend much of their time in deeper water and are rarely caught by anglers. There is much to learn about them. Charr seldom grow to more than 35cm long within the loch. One form of charr feeds on plankton and shoals can sometimes be seen at the surface. Another smaller form has big eyes and feed on worms, fly larvae and other small animals at the bottom of the loch. There are at least 25 other populations of Arctic charr in the WRFT area including unusual stream-spawning populations. Charr were the target of a net fishery in two lochs over 100 years ago - investigations by WRFT are ongoing.'
 
 <TroutScreen>:
     name: 'Brown trout and sea trout'
+    GridLayout:
+        cols: 1
+        Button:
+            on_release: app.root.current = 'NonInva'
+            text: 'Back'
+            background_color: rgba(87, 67, 169)
+        Image:
+            source: 'Images/trout.jpg'
+        Label:
+            text_size: self.size
+            text: 'Trout spawn in small streams that flow into Loch Maree in October or November. During their first two or three years after hatching, all trout look much the same. However, after 3 or 4 years in freshwater, some trout turn silver and go to sea, leaving their siblings to remain as brown trout within the loch. Finnock (small sea trout) return to freshwater after a few months of feeding in coastal waters. Larger sea trout may return to spawn several times during their lives - formerly reaching 80 cm or more in length. The Loch Maree sea trout population collapsed at the end of the 1980s and has yet to recover. Sea trout were affected by sea lice epizootics in Loch Ewe, most recently in 2001, 2003 and 2007. Sea trout populations elsewhere in the WRFT area have also been affected by sea lice and other factors. There are several forms of brown trout in Loch Maree including ferox. Ferox are large brown trout that eat other fish especially charr. Ferox are much like other trout when they are small, feeding mainly on insects around the shores of the loch. However, when they reach about 30 cm in length and 5 years old, their diet is almost entirely of charr and small trout. By age 10 years, ferox may be over 60cm long. There are also numerous isolated wild brown trout populations in Wester Ross in streams and hill lochs above waterfalls that are inaccessible to sea trout and salmon.'
 
 <SalmonScreen>:
     name: 'Atlantic salmon'
+    GridLayout:
+        cols: 1
+        Button:
+            on_release: app.root.current = 'NonInva'
+            text: 'Back'
+            background_color: rgba(87, 67, 169)
+        Image:
+            source: 'Images/sp3.jpg'
+        Label:
+            text_size: self.size
+            text: 'Between June and September each year, many hundreds of adult salmon return from the North Atlantic underneath the road bridge at Poolewe and swim up the River Ewe into Loch Maree. Many of the salmon are grilse which have been at sea for little more than one year. Larger salmon may have spent two or more winters at sea. In late autumn, salmon run upstream to lay their eggs in river gravels. Many salmon die after spawning and their carcasses are eaten by otters, foxes or other animals. Young salmon hatch in the spring, and are know as fry in their first summer, as parr in their 2nd and 3rd years before turning silver when they are known as smolts and migrating downstream into the sea and on towards arctic feeding grounds. WRFT has found juvenile Atlantic salmon in 30 river systems within the WRFT area. Salmon are the most important species for fisheries. The Little Gruinard River has been designated under the EU Habitats and Species directive as a Special Area of Conservation (SAC) for Atlantic salmon.'
 
 <SticklebackScreen>:
     name: 'Stickleback'
+    GridLayout:
+        cols: 1
+        Button:
+            on_release: app.root.current = 'NonInva'
+            text: 'Back'
+            background_color: rgba(87, 67, 169)
+        Image:
+            source: 'Images/stickleback.jpg'
+        Label:
+            text_size: self.size
+            text: 'In shallow water along the shores of the loch you may be able to spot some of the small fishes that live amongst stones or around weed beds. The Three-spined stickleback is a native species. It is found in both freshwater lochs, pools and rivers and in brackish waters. Adult sticklebacks are usually between 3 and 5 cm in length. They make nests from plant materials and males develop a bright red colouration during the breeding season.'
 
 <MinnowScreen>:
     name: 'Minnow'
+    GridLayout:
+        cols: 1
+        Button:
+            on_release: app.root.current = 'NonInva'
+            text: 'Back'
+            background_color: rgba(87, 67, 169)
+        Image:
+            source: 'Images/minnow.jpg'
+        Label:
+            text_size: self.size
+            text: 'More likely to be seen are shoals of Minnow. Adult minnows are usually between 3 and 7 cm in length. The minnow is non-native to Wester Ross and is believed to have been introduced to Loch Maree by anglers. The minnow is now one of the most common fishes in shallow water. Minnows compete with juvenile trout for food and can be easily caught in traps made from old drinks bottles baited with bread or luncheon meat. Minnows are taken as food by Black-throated diver. Other small fish including juvenile trout are of importance as food for diver chicks during June, July and August.'
 
 <EelScreen>:
     name: 'Eel'
+    GridLayout:
+        cols: 1
+        Button:
+            on_release: app.root.current = 'NonInva'
+            text: 'Back'
+            background_color: rgba(87, 67, 169)
+        Image:
+            source: 'Images/eels.jpg'
+        Label:
+            text_size: self.size
+            text: 'Loch Maree is well known for the size of some of its eels. Eels are found in both deep water and shallow water. Most male eels turn silvery in colour and migrate to sea when they are about 35 cm long. However, eels of over 60 cm (thought to be females) are sometimes recorded in local freshwaters. Some may be 40 years old or more. Where eels go after they leave freshwater remains something of a mystery. For many years experts have thought that they head to the Sargasso Sea, southwest of Bermuda, where they spawn and die. Elvers are young eels which after 2 or more years at sea drifting in the Gulf Stream, and upon reaching a length of about 65mm, enter freshwater and move upstream into lochs and tributaries. Initially they feed on small invertebrates. As they grow larger, they also feed on small fish, small frogs and carrion. Elver numbers have declined to less than 2% of former levels in some rivers. Because of this, and the complexity of their life cycle (and how little is known about it) conservationists are very concerned for the future of the European eel. WRFT has collected much information about eels during river surveys and at the WRFT Tournaig Trap Project.'
 
 <LampreysScreen>:
     name: 'Lampreys'
+    GridLayout:
+        cols: 1
+        Button:
+            on_release: app.root.current = 'NonInva'
+            text: 'Back'
+            background_color: rgba(87, 67, 169)
+        Image:
+            source: 'Images/lamprey.jpg'
+        Label:
+            text_size: self.size
+            text: 'There are three lamprey species in the UK. Brook lamprey (Lampetra planeri) remain in freshwater. River lamprey (L. fluviatalis) and Sea lamprey (Petromyzon marinus) are anadromous-migrating to sea where they parasitize other fish. After hatching, juvenile lampreys, known as ammocoetes, spend up to 5 years growing in their burrows in silt before developing eyes and teeth and emerging. Ammocoetes of both Lampetra sp. and Petromyzon marinus have been found in the River Carron below the bridge at Strathcarron. Lampetra have also been found in the River Croe, River Shiel and Glenmore (Glenelg) rivers but not further north.'
 
 <LicencesScreen>:
     name: 'Licences'
