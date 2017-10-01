@@ -40,6 +40,27 @@ class NonInvaScreen(Screen):
 class LicencesScreen(Screen):
     pass
 
+class LampreysScreen(Screen):
+    pass
+
+class EelScreen(Screen):
+    pass
+
+class MinnowScreen(Screen):
+    pass
+
+class SticklebackScreen(Screen):
+    pass
+
+class SalmonScreen(Screen):
+    pass
+
+class TroutScreen(Screen):
+    pass
+
+class ArcticCharrScreen(Screen):
+    pass
+
 class SettingsScreen(Screen):
 
     def wifiState(self):

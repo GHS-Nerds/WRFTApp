@@ -11,6 +11,13 @@ ScreenManagement:
     InvaScreen:
     NonInvaScreen:
     LicencesScreen:
+    LampreysScreen:
+    EelScreen:
+    MinnowScreen:
+    SticklebackScreen:
+    SalmonScreen:
+    TroutScreen:
+    ArcticCharrScreen:
 
 <HomeScreen>:
     name: 'home'
@@ -166,7 +173,7 @@ ScreenManagement:
         GridLayout:
             cols: 1
             padding: 10
-            spacing: 50
+            spacing: 40
             size_hint_y: None
             height: self.minimum_height
             Button:
@@ -252,6 +259,80 @@ ScreenManagement:
 
 <NonInvaScreen>:
     name: 'NonInva'
+    ScrollView:
+        GridLayout:
+            cols: 1
+            padding: 10
+            spacing: 40
+            size_hint_y: None
+            height: self.minimum_height
+            Button:
+                on_release: app.root.current = 'Arctic charr'
+                text: 'Arctic charr (Salvelinus alpinus)'
+                font_size: 20
+                background_color: rgba(87, 67, 169)
+            Button:
+                on_release: app.root.current = 'Brown trout and sea trout'
+                text: 'Brown trout and sea trout (Salmo trutta)'
+                font_size: 20
+                background_color: rgba(87, 67, 169)
+            Button:
+                on_release: app.root.current = 'Atlantic salmon'
+                text: 'Atlantic salmon (Salmo salar)'
+                font_size: 20
+                background_color: rgba(87, 67, 169)
+            Button:
+                on_release: app.root.current = 'Stickleback'
+                text: 'Stickleback (Gasterosteus aculeatus)'
+                font_size: 20
+                background_color: rgba(87, 67, 169)
+            Button:
+                on_release: app.root.current = 'Minnow'
+                text: 'Minnow (Phoxinus phoxinus)'
+                font_size: 20
+                background_color: rgba(87, 67, 169)
+            Button:
+                on_release: app.root.current = 'Eel'
+                text: 'Eel (Anguilla anguilla)'
+                font_size: 20
+                background_color: rgba(87, 67, 169)
+            Button:
+                on_release: app.root.current = 'Lampreys'
+                text: 'Lampreys'
+                font_size: 20
+                background_color: rgba(87, 67, 169)
+
+<ArcticCharrScreen>:
+    name: 'Arctic charr'
+    AnchorLayout:
+        anchor_x: 'center'
+        anchor_y: 'top'
+        Image:
+            source: 'Images/charr.png'
+    AnchorLayout:
+        anchor_x: 'left'
+        anchor_y: 'bottom'
+        Label:
+            text_size: self.size
+            text: 'Though less well known than salmon or trout, charr are possibly the most numerous fish in Loch Maree. Charr are descended from sea going ancestors that colonised the loch after the last ice age some 10,000 years ago. Charr spend much of their time in deeper water and are rarely caught by anglers. There is much to learn about them. Charr seldom grow to more than 35cm long within the loch. One form of charr feeds on plankton and shoals can sometimes be seen at the surface. Another smaller form has big eyes and feed on worms, fly larvae and other small animals at the bottom of the loch. There are at least 25 other populations of Arctic charr in the WRFT area including unusual stream-spawning populations. Charr were the target of a net fishery in two lochs over 100 years ago - investigations by WRFT are ongoing.'
+
+<TroutScreen>:
+    name: 'Brown trout and sea trout'
+
+<SalmonScreen>:
+    name: 'Atlantic salmon'
+
+<SticklebackScreen>:
+    name: 'Stickleback'
+
+<MinnowScreen>:
+    name: 'Minnow'
+
+<EelScreen>:
+    name: 'Eel'
+
+<LampreysScreen>:
+    name: 'Lampreys'
 
 <LicencesScreen>:
     name: 'Licences'
