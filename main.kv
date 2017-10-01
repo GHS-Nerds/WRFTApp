@@ -18,6 +18,10 @@ ScreenManagement:
     SalmonScreen:
     TroutScreen:
     ArcticCharrScreen:
+    MinnowsScreen:
+    PikeScreen:
+    MinkScreen:
+    RhododendronScreen:
 
 <HomeScreen>:
     name: 'home'
@@ -182,80 +186,81 @@ ScreenManagement:
                 font_size: 20
                 background_color: rgba(87, 67, 169)
             Button:
-                on_release: app.root.current = 'Info'
-                text: 'Back'
+                on_release: app.root.current = 'Minnows'
+                text: 'Minnow (Phoxinus phoxinus)'
                 font_size: 20
                 background_color: rgba(87, 67, 169)
             Button:
-                on_release: app.root.current = 'Info'
-                text: 'Back'
+                on_release: app.root.current = 'Pike'
+                text: 'Pike'
                 font_size: 20
                 background_color: rgba(87, 67, 169)
             Button:
-                on_release: app.root.current = 'Info'
-                text: 'Back'
+                on_release: app.root.current = 'Mink'
+                text: 'Mink'
                 font_size: 20
                 background_color: rgba(87, 67, 169)
             Button:
-                on_release: app.root.current = 'Info'
-                text: 'Back'
+                on_release: app.root.current = 'Rhododendron'
+                text: 'Rhododendron ponticum'
                 font_size: 20
                 background_color: rgba(87, 67, 169)
-            Button:
-                on_release: app.root.current = 'Info'
-                text: 'Back'
-                font_size: 20
-                background_color: rgba(87, 67, 169)
-            Button:
-                on_release: app.root.current = 'Info'
-                text: 'Back'
-                font_size: 20
-                background_color: rgba(87, 67, 169)
-            Button:
-                on_release: app.root.current = 'Info'
-                text: 'Back'
-                font_size: 20
-                background_color: rgba(87, 67, 169)
-            Button:
-                on_release: app.root.current = 'Info'
-                text: 'Back'
-                font_size: 20
-                background_color: rgba(87, 67, 169)
-            Button:
-                on_release: app.root.current = 'Info'
-                text: 'Back'
-                font_size: 20
-                background_color: rgba(87, 67, 169)
-            Button:
-                on_release: app.root.current = 'Info'
-                text: 'Back'
-                font_size: 20
-                background_color: rgba(87, 67, 169)
-            Button:
-                on_release: app.root.current = 'Info'
-                text: 'Back'
-                font_size: 20
-                background_color: rgba(87, 67, 169)
-            Button:
-                on_release: app.root.current = 'Info'
-                text: 'Back'
-                font_size: 20
-                background_color: rgba(87, 67, 169)
-            Button:
-                on_release: app.root.current = 'Info'
-                text: 'Back'
-                font_size: 20
-                background_color: rgba(87, 67, 169)
-            Button:
-                on_release: app.root.current = 'Info'
-                text: 'Back'
-                font_size: 20
-                background_color: rgba(87, 67, 169)
-            Button:
-                on_release: app.root.current = 'Info'
-                text: 'Back'
-                font_size: 20
-                background_color: rgba(87, 67, 169)
+
+<MinnowsScreen>:
+    name: 'Minnnows'
+    GridLayout:
+        cols: 1
+        Button:
+            on_release: app.root.current = 'Inva'
+            text: 'Back'
+            background_color: rgba(87, 67, 169)
+        Image:
+            source: 'Images/minnow.jpg'
+        Label:
+            text_size: self.size
+            text: 'Minnows have become established in many lochs. The general pattern of colonization suggests that some populations originated from discarded anglers live bait.'
+
+<PikeScreen>:
+    name: 'Pike'
+    GridLayout:
+        cols: 1
+        Button:
+            on_release: app.root.current = 'Inva'
+            text: 'Back'
+            background_color: rgba(87, 67, 169)
+        Image:
+            source: 'Images/pike.jpg'
+        Label:
+            text_size: self.size
+            text: 'Pike are currently known from only two loch systems in Wester Ross. Pike and minnow are considered to be non-native species within Wester Ross.'
+
+<MinkScreen>:
+    name: 'Mink'
+    GridLayout:
+        cols: 1
+        Button:
+            on_release: app.root.current = 'Inva'
+            text: 'Back'
+            background_color: rgba(87, 67, 169)
+        Image:
+            source: 'Images/Mink.jpg'
+        Label:
+            text_size: self.size
+            text: 'Mink are seen from time to time within the WRFT area most recently near Loch Maree and in Feb 2008 by the River Attadale. There is no evidence that they have affected juvenile fish populations in the area in the same way that juvenile fish production in the Wester Isles has been impacted. Mink may be deterred from some areas by the presence of Pine martens which are also good swimmers and feed on fish carrion.'
+
+<RhododendronScreen>:
+    name: 'Rhododendron'
+    GridLayout:
+        cols: 1
+        Button:
+            on_release: app.root.current = 'Inva'
+            text: 'Back'
+            background_color: rgba(87, 67, 169)
+        Image:
+            source: 'Images/Rhododendron.jpg'
+        Label:
+            text_size: self.size
+            text: 'The problem of invasive Rhododendron ponticum spreading along water courses was highlighted in the WRFT River Broom FMP, WRFT River Carron FMP, WRFT Ullapool River FMP. Rhododendron leaves contain toxins so are less palatable than the leaves of native trees for instream invertebrates. Furthermore, the dense shade created may restrict autochthonous productivity.'
 
 <NonInvaScreen>:
     name: 'NonInva'
@@ -267,7 +272,7 @@ ScreenManagement:
             size_hint_y: None
             height: self.minimum_height
             Button:
-                on_release: app.root.current = 'home'
+                on_release: app.root.current = 'Info'
                 text: 'Back'
                 font_size: 20
                 size_hint: 0.5, 0.5
