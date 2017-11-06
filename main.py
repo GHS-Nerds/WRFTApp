@@ -61,18 +61,6 @@ class TroutScreen(Screen):
 class ArcticCharrScreen(Screen):
     pass
 
-class MinnowsScreen(Screen):
-    pass
-
-class PikeScreen(Screen):
-    pass
-
-class MinkScreen(Screen):
-    pass
-
-class RhododendronScreen(Screen):
-    pass
-
 class SettingsScreen(Screen):
 
     def wifiState(self):
@@ -155,3 +143,4 @@ class MainApp(App):
 
 if __name__ == "__main__":
     MainApp().run()
+
