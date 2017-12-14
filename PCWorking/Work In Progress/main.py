@@ -8,15 +8,21 @@ from kivy.properties import NumericProperty
 from kivy.properties import StringProperty
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.widget import Widget
-import numpy as np
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.button import Button
 from kivy.uix.scrollview import ScrollView
 from kivy.core.window import Window
 from kivy.graphics import Color
+#Packaging module
 import csv
+#Sheets intergration
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
 
-
+scope = ['https://spreadsheets.google.com/feeds']
+credentials = ServiceAccountCredentials.from_json_keyfile_name('SWRFTTesting.json', scope)
+gc = gspread.authorize(credentials)
+sheet = gc.open("WRFTAppTest").sheet1
 
 lochNames = ['Loch Tollie', 'Loch Bad an Sgalaig', 'Dubh Loch', 'Loch Garbhaig', 'Loch nam Breac', 'Loch Feur', 'Loch a\' Gharbh-doire', 'Loch Airigh Mhic Criadh', 'Loch Airigh a\' Phuill', 'Loch nam Buainichean', 'Loch na Feithe Mugaig', 'Loch Doire na h-Airighe', 'Loch an Aird-sheilg']
 
@@ -92,61 +98,66 @@ class ScreenManagement(ScreenManager):
 kivyFile = Builder.load_file("main.kv")
 
 class MainApp(App):
-    index = 0
-    '''
-    Information to be sent to server need to be packaged in the following order:
-    full name as nameIn
-    fish species as fishSpeciesIn
-    fish weight as fishWeightIn
-    fish length as fishLengthIn
-    This is important for translation on server side
-    '''
-
     def textPackage(self, nameIn, fishSpeciesIn, fishWeightIn, fishLengthIn):
-            #Peace of mind convertions to float values
-            fishWeightIn = int(fishWeightIn)
-            fishLengthIn = int(fishLengthIn)
-            '''
-            #Convert to bytes for np
-            nameIn = str.encode(nameIn)
-            fishSpeciesIn = str.encode(fishSpeciesIn)
+            Name = nameIn
+            fishSpecies = fishSpeciesIn
+            fishWeight = str(fishWeightIn)
+            fishLength = str(fishLengthIn)
 
-            #Checking input variable types
-            if (type(fishWeightIn) is int) == False:
-                typeChecks = True
-                print('Incorrect Type fishWeightIn')
-                #Make this produce an error code
-            elif (type(fishWeightIn) is int) == True:
-                typeChecks = False
-                fishWeightIn = bytes([fishWeightIn])
-                print('Correct Type fishWeightIn')
+            f_test = open('test.txt')
+            f_test_read = f_test.read()
+            print(f_test_read)
+            if 'NEW_ENTRY' not in f_test_read:
+                f_test.close()
+                f = open("test.txt","w") #opens file with name of "test.txt"
+                f.write('NEW_ENTRY\n')
+                f.write(Name)
+                f.write('\n')
+                f.write(fishSpecies)
+                f.write('\n')
+                f.write(fishWeight)
+                f.write('\n')
+                f.write(fishLength)
+                f.write('\n')
+                f.close()
+            else:
+                f_test.close()
+                f = open("test.txt","a") #opens file with name of "test.txt"
+                f.write('NEW_ENTRY\n')
+                f.write(Name)
+                f.write('\n')
+                f.write(fishSpecies)
+                f.write('\n')
+                f.write(fishWeight)
+                f.write('\n')
+                f.write(fishLength)
+                f.write('\n')
+                f.close()
 
-            if (type(fishLengthIn) is int) == False:
-                typeChecks = True
-                print('Incorrect Type fishLengthIn')
-                #Make this produce an error code
-            elif (type(fishLengthIn) is int) == True:
-                typeChecks = False
-                fishLengthIn = bytes([fishLengthIn])
-                print('Correct Type fishLengthIn')
-            '''
-            Name = ['f_name', nameIn]
-            fishSpecies = ['fishName', fishSpeciesIn]
-            fishWeight = ['fishWeight', fishWeightIn]
-            fishLength = ['fishLength', fishLengthIn]
+    def SendtoSheets(self):
+        #Reads information from the text file
+        f_test = open('test.txt')
+        f_test_read = f_test.read()
+        #Splits information into various sections (Name, Surname, Fish Species, Fish Weight, Fish Length)
+        info = f_test_read.split()
+        info = info[1:]
+        Name = info[0]
+        S_Name = info[1]
+        fishSpecies = info[2]
+        fishWeight = info[3]
+        fishLength = info[4]
+        row = [Name, fishSpecies, fishWeight, fishLength]
+        index = 1
+        #Inserts information into spreadsheet
+        sheet.append_row(row)
+        f_test.write("")
+        f_test.close()
 
-            with open('WRFT.csv', 'w', newline='') as csvfile:
-                lineWriter = csv.writer(csvfile, delimiter=' ',
-                                quotechar='|', quoting=csv.QUOTE_MINIMAL)
-                lineWriter.writerow(Name)
-                lineWriter.writerow(fishSpecies)
-                lineWriter.writerow(fishWeight)
-                lineWriter.writerow(fishLength)
-                #Call the below to change the specified information
-                #csvPackage(fName, sName, fishSpecies, fishWeight, fishLength)
+
 
     def build(self):
         return kivyFile
 
 if __name__ == "__main__":
     MainApp().run()
+
